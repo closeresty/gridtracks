@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2family=Inter:wght@300;900&display=swap');
+body{
+  margin: 0;
+  padding: 0;
+}
+.grid{
+  --min-width: 1fr;
+  --max-width: 15fr;
+  --num-children: 3;
+  display: grid;
+  grid-template-columns: var(--min-width) var(--min-width) var(--min-width);
+  width: 100%;
+  height: 100vh;
+  transition: all ease-in-out 1250ms;
+  &:has(.col:nth-child(1):hover){
+    grid-template-columns: var(--max-width) var(--min-width) var(--min-width);
+  }
+  &:has(.col:nth-child(2):hover){
+    grid-template-columns: var(--min-width) var(--max-width) var(--min-width);
+  }
+  &:has(.col:nth-child(3):hover){
+    grid-template-columns: var(--min-width) var(--min-width) var(--max-width);
+  }
+}
+
+
+.col{
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+  &:hover{
+    h1{
+      width: 100%;
+      transition-delay: 300ms;
+    }
+  }
+  &:nth-child(1){
+    background: #e6e4e6;
+  }
+  &:nth-child(2){
+    background: #010001;
+  }
+  &:nth-child(3){
+    background: #f7a9bd;
+  }
+}
+
+.title-row{
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+img{
+  width: 100%;
+  max-width: 500px;
+  aspect-ratio: 16/9;
+}
+
+h1{
+  align-self: flex-end;
+  font-weight: 900;
+  font-size: 5rem;
+  line-height: 1;
+  margin: 0;
+  text-transform: uppercase;
+  writing-mode: vertical-rl;
+  rotate: 180deg;
+  width: 0;
+  overflow: hidden;
+  transition: all 300ms;
+  transition-delay: 1000ms;
+}
